@@ -8,6 +8,7 @@
   <div>
     <a href="https://www.thefrog.me/" target="_blank" rel="noreferrer">
       <img src={RoofLogo} class="logo" alt="RUN Logo" />
+      <link rel="icon" type="image/png" sizes="16x16" href={radioactiveLogo}>
     </a>
     <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
       <img src={radioactiveLogo} class="logo frog" alt="RUN Logo" />
@@ -35,7 +36,5 @@
   .logo.frog:hover {
     filter: drop-shadow(0 0 2em #ff3e00aa);
   }
-  .read-the-docs {
-    color: #888;
-  }
+
 </style>
