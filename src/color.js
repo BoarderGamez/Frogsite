@@ -1,4 +1,5 @@
 export const Catppuccin = {
+    Base: '#eff1f5',
     Rosewater : '#dc8a78',
     Flamingo : '#dd7878',
     Pink : '#ea76cb',
