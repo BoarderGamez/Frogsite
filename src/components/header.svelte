@@ -1,5 +1,5 @@
 <script>
-    import {Catppuccin} from "../color.js";
+    import { Catppuccin } from "../color";
 </script>
 
 <header class="site-header">
@@ -14,7 +14,7 @@
         justify-content: space-evenly;
         align-items: center;
         padding: 10px 20px;
-        background-color: Base ;
-        color: Base
+        background-color: #eff1f5;
+        color: #eff1f5;
     }
 </style>
