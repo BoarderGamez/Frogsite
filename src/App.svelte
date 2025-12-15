@@ -1,31 +1,26 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
+  import radioactiveLogo from './assets/radioactive.png'
+  import RoofLogo from '/roof.png'
   import Counter from './lib/Counter.svelte'
 </script>
 
 <main>
   <div>
-    <a href="https://vite.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
+    <a href="https://www.thefrog.me/" target="_blank" rel="noreferrer">
+      <img src={RoofLogo} class="logo" alt="RUN Logo" />
+      <link rel="icon" type="image/png" sizes="16x16" href={radioactiveLogo}>
     </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
+    <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
+      <img src={radioactiveLogo} class="logo frog" alt="RUN Logo" />
     </a>
   </div>
-  <h1>Vite + Svelte</h1>
+  <h1>Frog's Website Wip</h1>
 
   <div class="card">
     <Counter />
   </div>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
 
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
 </main>
 
 <style>
@@ -38,10 +33,8 @@
   .logo:hover {
     filter: drop-shadow(0 0 2em #646cffaa);
   }
-  .logo.svelte:hover {
+  .logo.frog:hover {
     filter: drop-shadow(0 0 2em #ff3e00aa);
   }
-  .read-the-docs {
-    color: #888;
-  }
+
 </style>
