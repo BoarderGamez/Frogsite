@@ -14,6 +14,7 @@
         justify-content: space-evenly;
         align-items: center;
         padding: 10px 20px;
-        background: Base ;
+        background-color: Base ;
+        color: Base
     }
 </style>
