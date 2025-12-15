@@ -1,5 +1,5 @@
 <script>
-    import { Catppuccin } from "../color";
+
 </script>
 
 <header class="site-header">
@@ -8,7 +8,6 @@
     </div>
 </header>
 <style>
-    from
     .site-header{
         display: flex;
         justify-content: space-evenly;
