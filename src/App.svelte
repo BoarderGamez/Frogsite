@@ -28,6 +28,12 @@
   main{
     padding-top: 60px;
   }
+  html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+  }
   .logo {
     height: 6em;
     padding: 1.5em;
