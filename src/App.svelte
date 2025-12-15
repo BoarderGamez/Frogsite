@@ -25,6 +25,9 @@
 </main>
 
 <style>
+  main{
+    padding-top: 60px;
+  }
   .logo {
     height: 6em;
     padding: 1.5em;

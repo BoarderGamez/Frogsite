@@ -10,8 +10,10 @@
 <style>
     .site-header{
         display: flex;
-        position: sticky;
+        position: fixed;
         top: 0;
+        left: 0;
+        width: 100%;
         justify-content: space-evenly;
         align-items: center;
         padding: 10px 20px;
