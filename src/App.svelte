@@ -2,8 +2,9 @@
   import radioactiveLogo from './assets/radioactive.png'
   import RoofLogo from '/roof.png'
   import Counter from './lib/Counter.svelte'
+  import Header from './components/header.svelte';
 </script>
-
+<Header />
 <main>
   <div>
     <a href="https://www.thefrog.me/" target="_blank" rel="noreferrer">
