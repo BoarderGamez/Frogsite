@@ -1,4 +1,4 @@
-export const Cattpuccin = {
+export const Catppuccin = {
     Rosewater : '#dc8a78',
     Flamingo : '#dd7878',
     Pink : '#ea76cb',
