@@ -15,8 +15,9 @@
       <img src={radioactiveLogo} class="logo frog" alt="RUN Logo" />
     </a>
   </div>
-  <h1>Frog's Website Wip</h1>
-
+  <div class="tempdown">
+    <h1>Frog's Website Wip</h1>
+  </div>
   <div class="card">
     <Counter />
   </div>
@@ -45,6 +46,9 @@
   }
   .logo.frog:hover {
     filter: drop-shadow(0 0 2em #ff3e00aa);
+  }
+  .tempdown{
+    font: bold 1em/1.5em "FOT-Yuruka Std UB", Calibri;
   }
 
 </style>
