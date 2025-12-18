@@ -1,40 +1,113 @@
 <script lang="ts">
-  import radioactiveLogo from './assets/radioactive.png'
-  import RoofLogo from '/roof.png'
-  import Counter from './lib/Counter.svelte'
+  import { onMount } from 'svelte';
+  import Header from './components/header.svelte';
+  import froggyLogo from "./assets/Froggy logo.svg";
+  import { Catppuccin } from './color.js';
+
+  let scrolled = false;
+
+  onMount(() => {
+    const handleScroll = () => {
+      scrolled = window.scrollY > 50;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
 </script>
-
-<main>
-  <div>
-    <a href="https://www.thefrog.me/" target="_blank" rel="noreferrer">
-      <img src={RoofLogo} class="logo" alt="RUN Logo" />
-      <link rel="icon" type="image/png" sizes="16x16" href={radioactiveLogo}>
-    </a>
-    <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
-      <img src={radioactiveLogo} class="logo frog" alt="RUN Logo" />
-    </a>
-  </div>
-  <h1>Frog's Website Wip</h1>
-
-  <div class="card">
-    <Counter />
+<Header />
+<main style="background-color: {Catppuccin.Base}; color: {Catppuccin.Text};">
+  <div class="center content">
+    <div class="hero-container" class:scrolled>
+      <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
+        <img src={froggyLogo} alt="Froggy Logo" class="logo-img" />
+      </a>
+      <h1 class="hero-title" style="color: {Catppuccin.Text};">Frogginton Frogged II</h1>
+    </div>
   </div>
 
-
+  <section class="about-section">
+    <h2 style="color: {Catppuccin.Text};">About Me</h2>
+    <a href="https://github.com/BoarderGamez" target="_blank" rel="noreferrer" style="color: {Catppuccin.Blue};">
+      github.com/BoarderGamez
+    </a>
+  </section>
 </main>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  :global(body) {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+    background-color: #eff1f5;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  :global(a) {
+    color: #1e66f5;
   }
-  .logo.frog:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+  :global(a:hover) {
+    color: #04a5e5;
   }
-
+  :global(a:visited) {
+    color: #7287fd;
+  }
+  :global(::selection) {
+    background-color: rgba(124, 127, 147, 0.25);
+  }
+  main {
+    padding-top: 60px;
+    min-height: 100vh;
+  }
+  .center.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .hero-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+  }
+  .logo-img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: transform 0.6s ease;
+    z-index: 2;
+    position: relative;
+  }
+  .hero-title {
+    font: bold 1em/1.5em "FOT-Yuruka Std UB", Calibri;
+    font-size: 3em;
+    position: absolute;
+    right: 20%;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    white-space: nowrap;
+  }
+  .scrolled .logo-img {
+    transform: translateX(-20vw);
+  }
+  .scrolled .hero-title {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .about-section {
+    text-align: center;
+    padding: 2em;
+  }
+  .about-section h2 {
+    font: bold 2em/1.5em "FOT-Yuruka Std UB", Calibri;
+    margin-bottom: 1em;
+  }
+  .about-section a {
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+  .about-section a:hover {
+    text-decoration: underline;
+  }
 </style>
