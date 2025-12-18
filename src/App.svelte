@@ -1,18 +1,14 @@
 <script lang="ts">
-  import radioactiveLogo from './assets/radioactive.png'
-  import RoofLogo from '/roof.png'
+
   import Counter from './lib/Counter.svelte'
   import Header from './components/header.svelte';
+  import froggyLogo from "./assets/Froggy logo.svg";
 </script>
 <Header />
 <main>
-  <div>
-    <a href="https://www.thefrog.me/" target="_blank" rel="noreferrer">
-      <img src={RoofLogo} class="logo" alt="RUN Logo" />
-      <link rel="icon" type="image/png" sizes="16x16" href={radioactiveLogo}>
-    </a>
+  <div class="center content">
     <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
-      <img src={radioactiveLogo} class="logo frog" alt="RUN Logo" />
+      <img src={froggyLogo} alt="Froggy Logo" class="logo-img" />
     </a>
   </div>
   <div class="tempdown">
@@ -35,20 +31,19 @@
     height: 100%;
     overflow: auto;
   }
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.frog:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
   .tempdown{
     font: bold 1em/1.5em "FOT-Yuruka Std UB", Calibri;
+  }
+  .center.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .logo-img{
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
   }
 
 </style>

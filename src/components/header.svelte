@@ -14,21 +14,27 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 60px;
+        height: 5vh;
         justify-content: center;
         align-items: center;
-        padding: 0 20px;
+        padding-top: 2vh;
+        padding-right: 2vh;
+        padding-left: 2vh;
+        padding-bottom: 2vh;
         z-index: 100;
     }
     .logo-img {
         position: absolute;
         left: 10px;
         height: 100%;
-        padding: 5px;
+        padding-top: 2vh;
+        padding-right: 2vh;
+        padding-left:2vh;
+        padding-bottom: 2vh;
     }
     .title {
+        font: bold 1em/1.5em "FOT-Yuruka Std UB", Calibri;
         margin: 0;
-        font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 3em;
     }
 </style>
