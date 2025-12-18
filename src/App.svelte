@@ -54,12 +54,6 @@
     overflow-y: scroll;
     background-color: #eff1f5;
   }
-  :global(#app) {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    background-color: #eff1f5;
-  }
   .page-wrapper {
     min-height: 100vh;
     display: flex;
@@ -204,6 +198,10 @@
     .logo-img {
       max-width: 60%;
       max-height: 60%;
+      transform: none;
+    }
+    .logo-img:hover {
+      transform: scale(1.05);
     }
     .center.content {
       height: auto;
