@@ -14,32 +14,45 @@
     return () => window.removeEventListener('scroll', handleScroll);
   });
 </script>
-<Header />
-<main style="background-color: {Catppuccin.Base}; color: {Catppuccin.Text};">
-  <div class="center content">
-    <div class="hero-container" class:scrolled>
-      <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
-        <img src={froggyLogo} alt="Froggy Logo" class="logo-img" />
-      </a>
-      <h1 class="hero-title" style="color: {Catppuccin.Text};">Frogginton Frogged II</h1>
+<div class="page-wrapper">
+  <Header />
+  <main style="background-color: {Catppuccin.Base}; color: {Catppuccin.Text};">
+    <div class="center content">
+      <div class="hero-container" class:scrolled>
+        <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
+          <img src={froggyLogo} alt="Froggy Logo" class="logo-img" />
+        </a>
+        <h1 class="hero-title" style="color: {Catppuccin.Text};">Frogginton Frogged II</h1>
+      </div>
     </div>
-  </div>
 
-  <section class="about-section">
-    <h2 style="color: {Catppuccin.Text};">About Me</h2>
-    <a href="https://github.com/BoarderGamez" target="_blank" rel="noreferrer" style="color: {Catppuccin.Blue};">
-      github.com/BoarderGamez
-    </a>
-  </section>
-</main>
+    <section class="about-section">
+      <h2 style="color: {Catppuccin.Text};">About Me</h2>
+      <a href="https://github.com/BoarderGamez" target="_blank" rel="noreferrer" style="color: {Catppuccin.Blue};">
+        Github
+      </a>
+    </section>
+  </main>
+
+  <footer style="background-color: {Catppuccin.Mantle}; color: {Catppuccin.Subtext0}; border-top: 1px solid {Catppuccin.Surface0};">
+    <p>&copy; 2025 Frogginton Frogged II</p>
+    <a href="https://github.com/BoarderGamez" target="_blank" rel="noreferrer" style="color: {Catppuccin.Blue};">GitHub</a>
+  </footer>
+</div>
 
 <style>
-  :global(body) {
+  :global(html), :global(body) {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: auto;
     background-color: #eff1f5;
+  }
+  .page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
   :global(a) {
     color: #1e66f5;
@@ -51,11 +64,11 @@
     color: #7287fd;
   }
   :global(::selection) {
-    background-color: rgba(124, 127, 147, 0.25);
+    background-color: #7C7F933F;
   }
   main {
     padding-top: 60px;
-    min-height: 100vh;
+    flex: 1;
   }
   .center.content {
     display: flex;
@@ -109,5 +122,75 @@
   }
   .about-section a:hover {
     text-decoration: underline;
+  }
+  footer {
+    text-align: center;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  footer p {
+    margin: 0;
+  }
+  footer a {
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 1.5em;
+      right: 5%;
+    }
+    .scrolled .logo-img {
+      transform: translateX(-30vw);
+    }
+    .about-section h2 {
+      font-size: 1.5em;
+    }
+    .about-section a {
+      font-size: 1em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-container {
+      flex-direction: column;
+    }
+    .hero-title {
+      position: relative;
+      right: auto;
+      font-size: 1.2em;
+      opacity: 1;
+      transform: none;
+      margin-top: 1em;
+    }
+    .scrolled .logo-img {
+      transform: none;
+    }
+    .scrolled .hero-title {
+      transform: none;
+    }
+    .logo-img {
+      max-width: 60%;
+      max-height: 60%;
+    }
+    .center.content {
+      height: auto;
+      min-height: 80vh;
+      padding: 2em;
+    }
+    .about-section {
+      padding: 1em;
+    }
   }
 </style>
