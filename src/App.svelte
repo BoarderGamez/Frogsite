@@ -54,7 +54,7 @@
     overflow-y: scroll;
     background-color: #eff1f5;
   }
-  :global() {
+  :global(#app) {
     margin: 0;
     padding: 0;
     min-height: 100%;
