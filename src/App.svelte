@@ -41,11 +41,23 @@
 </div>
 
 <style>
-  :global(html), :global(body) {
+  :global(html) {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: auto;
+    background-color: #eff1f5;
+  }
+  :global(body) {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-y: scroll;
+    background-color: #eff1f5;
+  }
+  :global() {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
     background-color: #eff1f5;
   }
   .page-wrapper {
@@ -53,6 +65,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    box-sizing: border-box;
   }
   :global(a) {
     color: #1e66f5;
@@ -87,22 +100,30 @@
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
-    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, filter 0.3s ease;
     z-index: 2;
     position: relative;
+    transform: translateX(5vw);
+  }
+  .logo-img:hover {
+    filter: drop-shadow(0 0 1em #1e66f5);
+    transform: translateX(5vw) scale(1.05);
+  }
+  .scrolled .logo-img:hover {
+    transform: translateX(-15vw) scale(1.05);
   }
   .hero-title {
     font: bold 1em/1.5em "FOT-Yuruka Std UB", Calibri;
     font-size: 3em;
     position: absolute;
-    right: 20%;
+    right: 30%;
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(80px);
     transition: transform 0.6s ease, opacity 0.6s ease;
     white-space: nowrap;
   }
   .scrolled .logo-img {
-    transform: translateX(-20vw);
+    transform: translateX(-15vw);
   }
   .scrolled .hero-title {
     opacity: 1;
