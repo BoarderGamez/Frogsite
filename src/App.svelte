@@ -1,49 +1,113 @@
 <script lang="ts">
-
-  import Counter from './lib/Counter.svelte'
+  import { onMount } from 'svelte';
   import Header from './components/header.svelte';
   import froggyLogo from "./assets/Froggy logo.svg";
+  import { Catppuccin } from './color.js';
+
+  let scrolled = false;
+
+  onMount(() => {
+    const handleScroll = () => {
+      scrolled = window.scrollY > 50;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
 </script>
 <Header />
-<main>
+<main style="background-color: {Catppuccin.Base}; color: {Catppuccin.Text};">
   <div class="center content">
-    <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
-      <img src={froggyLogo} alt="Froggy Logo" class="logo-img" />
+    <div class="hero-container" class:scrolled>
+      <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
+        <img src={froggyLogo} alt="Froggy Logo" class="logo-img" />
+      </a>
+      <h1 class="hero-title" style="color: {Catppuccin.Text};">Frogginton Frogged II</h1>
+    </div>
+  </div>
+
+  <section class="about-section">
+    <h2 style="color: {Catppuccin.Text};">About Me</h2>
+    <a href="https://github.com/BoarderGamez" target="_blank" rel="noreferrer" style="color: {Catppuccin.Blue};">
+      github.com/BoarderGamez
     </a>
-  </div>
-  <div class="tempdown">
-    <h1>Frog's Website Wip</h1>
-  </div>
-  <div class="card">
-    <Counter />
-  </div>
-
-
+  </section>
 </main>
 
 <style>
-  main{
-    padding-top: 60px;
-  }
-  html,body{
+  :global(body) {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: auto;
+    background-color: #eff1f5;
   }
-  .tempdown{
-    font: bold 1em/1.5em "FOT-Yuruka Std UB", Calibri;
+  :global(a) {
+    color: #1e66f5;
   }
-  .center.content{
+  :global(a:hover) {
+    color: #04a5e5;
+  }
+  :global(a:visited) {
+    color: #7287fd;
+  }
+  :global(::selection) {
+    background-color: rgba(124, 127, 147, 0.25);
+  }
+  main {
+    padding-top: 60px;
+    min-height: 100vh;
+  }
+  .center.content {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
-  .logo-img{
+  .hero-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+  }
+  .logo-img {
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
+    transition: transform 0.6s ease;
+    z-index: 2;
+    position: relative;
   }
-
+  .hero-title {
+    font: bold 1em/1.5em "FOT-Yuruka Std UB", Calibri;
+    font-size: 3em;
+    position: absolute;
+    right: 20%;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    white-space: nowrap;
+  }
+  .scrolled .logo-img {
+    transform: translateX(-20vw);
+  }
+  .scrolled .hero-title {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .about-section {
+    text-align: center;
+    padding: 2em;
+  }
+  .about-section h2 {
+    font: bold 2em/1.5em "FOT-Yuruka Std UB", Calibri;
+    margin-bottom: 1em;
+  }
+  .about-section a {
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+  .about-section a:hover {
+    text-decoration: underline;
+  }
 </style>
