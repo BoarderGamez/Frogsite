@@ -22,7 +22,7 @@
         <a href="https://www.thefrog.me" target="_blank" rel="noreferrer">
           <img src={froggyLogo} alt="Froggy Logo" class="logo-img" />
         </a>
-        <h1 class="hero-title" style="color: {Catppuccin.Text};">Frogginton Frogged II COMMIT</h1>
+        <h1 class="hero-title" style="color: {Catppuccin.Text};">Frogginton Frogged II</h1>
       </div>
     </div>
 
