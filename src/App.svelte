@@ -15,7 +15,7 @@
     return () => window.removeEventListener('scroll', handleScroll);
   });
 </script>
-<script lang="js"; src="https://clicker.jer.app/clicker.js"></script>
+<script src="https://clicker.jer.app/clicker.js"></script>
 <div class="page-wrapper">
   <Header />
   <main style="background-color: {Catppuccin.Base}; color: {Catppuccin.Text};">
