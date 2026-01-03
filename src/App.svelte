@@ -1,3 +1,4 @@
+import('https://clicker.jer.app/clicker.js')
 <script lang="ts">
   import { onMount } from 'svelte';
   import Header from './components/header.svelte';
@@ -14,6 +15,7 @@
     return () => window.removeEventListener('scroll', handleScroll);
   });
 </script>
+<script src="https://clicker.jer.app/clicker.js"></script>
 <div class="page-wrapper">
   <Header />
   <main style="background-color: {Catppuccin.Base}; color: {Catppuccin.Text};">
