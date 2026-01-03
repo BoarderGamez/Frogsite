@@ -15,7 +15,10 @@
     return () => window.removeEventListener('scroll', handleScroll);
   });
 </script>
-<script src="https://clicker.jer.app/clicker.js"></script>
+<svelte:head>
+  <script src="https://clicker.jer.app/clicker.js"></script>
+</svelte:head>
+
 <div class="page-wrapper">
   <Header />
   <main style="background-color: {Catppuccin.Base}; color: {Catppuccin.Text};">
