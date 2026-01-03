@@ -15,9 +15,6 @@
     return () => window.removeEventListener('scroll', handleScroll);
   });
 </script>
-<svelte:head>
-  <script src="https://clicker.jer.app/clicker.js"></script>
-</svelte:head>
 
 <div class="page-wrapper">
   <Header />
